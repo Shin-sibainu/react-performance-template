@@ -84,3 +84,35 @@ import "./App.css";
 // }
 
 // export default App;
+
+//6. React.lazy()
+// export default function MarkdownEditor() {
+//   const [showPreview, setShowPreview] = useState(false);
+//   const [markdown, setMarkdown] = useState("");
+
+//   return (
+//     <>
+//       <textarea
+//         value={markdown}
+//         onChange={(e) => setMarkdown(e.target.value)}
+//       />
+//       <label>
+//         <input
+//           type="checkbox"
+//           checked={showPreview}
+//           onChange={(e) => setShowPreview(e.target.checked)}
+//         />
+//         Show preview
+//       </label>
+//       <hr />
+//       {showPreview && <p>Preview</p>}
+//     </>
+//   );
+// }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// function delayForDemo(promise: any) {
+//   return new Promise((resolve) => {
+//     setTimeout(resolve, 2000);
+//   }).then(() => promise);
+// }
