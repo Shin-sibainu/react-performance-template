@@ -140,40 +140,72 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 // export default App;
 
 //5.React Query(Tanstack Query)
-function App() {
-  const queryClient = new QueryClient();
+// function App() {
+//   const queryClient = new QueryClient();
 
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Example />
-    </QueryClientProvider>
-  );
-}
+//   return (
+//     <QueryClientProvider client={queryClient}>
+//       <Example />
+//     </QueryClientProvider>
+//   );
+// }
 
-function Example() {
-  const { data, error, isPending, isFetching, isLoading } = useQuery({
-    queryKey: ["repoData"],
-    queryFn: () =>
-      fetch("https://api.github.com/repos/TanStack/query").then((res) =>
-        res.json()
-      ),
-  });
+// function Example() {
+//   const { data, error, isPending, isFetching, isLoading } = useQuery({
+//     queryKey: ["repoData"],
+//     queryFn: () =>
+//       fetch("https://api.github.com/repos/TanStack/query").then((res) =>
+//         res.json()
+//       ),
+//   });
 
-  if (isPending) return "Loading...";
+//   if (isPending) return "Loading...";
 
-  if (error) return "Error" + error.message;
+//   if (error) return "Error" + error.message;
 
-  return (
-    <div>
-      <h1>{data.name}</h1>
-      <p>{data.description}</p>
-      <strong>👀 {data.subscribers_count}</strong>{" "}
-      <strong>✨ {data.stargazers_count}</strong>{" "}
-      <strong>🍴 {data.forks_count}</strong>
-      <div>{isFetching ? "Updating..." : ""}</div>
-      <ReactQueryDevtools />
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <h1>{data.name}</h1>
+//       <p>{data.description}</p>
+//       <strong>👀 {data.subscribers_count}</strong>{" "}
+//       <strong>✨ {data.stargazers_count}</strong>{" "}
+//       <strong>🍴 {data.forks_count}</strong>
+//       <div>{isFetching ? "Updating..." : ""}</div>
+//       <ReactQueryDevtools />
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
+
+//6. React.lazy()
+// export default function MarkdownEditor() {
+//   const [showPreview, setShowPreview] = useState(false);
+//   const [markdown, setMarkdown] = useState("");
+
+//   return (
+//     <>
+//       <textarea
+//         value={markdown}
+//         onChange={(e) => setMarkdown(e.target.value)}
+//       />
+//       <label>
+//         <input
+//           type="checkbox"
+//           checked={showPreview}
+//           onChange={(e) => setShowPreview(e.target.checked)}
+//         />
+//         Show preview
+//       </label>
+//       <hr />
+//       {showPreview && <p>Preview</p>}
+//     </>
+//   );
+// }
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// function delayForDemo(promise: any) {
+//   return new Promise((resolve) => {
+//     setTimeout(resolve, 2000);
+//   }).then(() => promise);
+// }
